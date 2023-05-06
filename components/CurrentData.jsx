@@ -7,7 +7,7 @@ function CurrentData({currentCity, selectedDay}) {
     let Icon = weatherCodeComponents[weathercode];
 
     return (
-        <div className='currentDayData rounded-3xl min-w-80 mx-auto flex flex-col justify-between pl-16 md:items-start w-1/2 lg:px-8 px-4 md:py-10 py-5 scale-105 '>
+        <div className='currentDayData rounded-3xl min-w-80 mx-auto flex flex-col justify-between pl-16 md:items-start w-1/2 lg:px-8 px-4 md:py-10 py-5 md:scale-105 '>
             <div className="flex flex-col justify-between items-start">
                 <span className="font-bold text-3xl lg:text-4xl">{moment(time).format("dddd")}</span>
                 <span className="font-medium mt-2 md:mb-4 mb-2 text-lg lg:text-xl">{moment(time).format("Do MMMM YYYY")}</span>

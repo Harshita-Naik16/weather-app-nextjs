@@ -24,26 +24,28 @@ function Modal({ handleClick, setToggleModal }) {
     }, [debouncedValue])
 
     function handleCityClick(city) {
+        // e.stopPropagation()
         setShowCities(false)
         setToggleModal(false)
         handleClick(city)
     }
 
     return (
-        <div className='modalBg w-screen h-screen fixed top-0 left-0 flex flex-col items-center  justify-center bg-sky-50'>
+        <div className='modalBg w-screen h-screen fixed top-0 left-0 flex flex-col items-center justify-start pt-16 bg-sky-50' onClick={() => setToggleModal(false)}>
             <input
                 type='text'
                 placeholder='Enter your location'
                 className='p-4 text-black w-72 lg:w-96 rounded-lg'
                 onChange={(e) => setValue(e.target.value)}
+                onClick={(e) => e.stopPropagation()}
                 value={value}
             />
             {showCities &&
-                <ul className='rounded-lg w-72 lg:w-96 my-1 bg-slate-700'>
+                <ul className='rounded-lg w-72 lg:w-96 my-1 bg-slate-700 overflow-y-scroll'>
                     {cities.map(city => {
                         return <li
                             key={city.id}
-                            onClick={() => handleCityClick(city)}
+                            onClick={(e) => handleCityClick(city)}
                             className='p-4  hover:bg-gradient-to-r from-cuscyan rounded-lg to-cusblue cursor-pointer hover:transition-all duration-200'
                             >
                             {city.name}, {city.admin1}, {city.country}

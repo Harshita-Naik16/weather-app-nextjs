@@ -10,18 +10,6 @@ export default function SearchBox({ setToggleModal }) {
                 <SlLocationPin size={24} />
                 <span className="ml-2">Change Location</span>
             </button>
-            {/* <p>{debouncedValue}</p> */}
         </>
     )
 }
-
-
-{/* <label >
-<input 
-    type='text' 
-    placeholder='Enter your location' 
-    className='btn p-4 text-slate-50'
-    onChange={(e) => setValue(e.target.value)}
-    value={value}
-/>
-</label> */}

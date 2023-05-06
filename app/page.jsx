@@ -39,6 +39,7 @@ export default function Home() {
           weathercode: daily?.weathercode[i],
         })
       }
+      setSelectedDay(dailyDataArr[0])
       setDailyData(dailyDataArr)
     })
     
@@ -61,7 +62,7 @@ export default function Home() {
           <DailyData data={dailyData} setSelectedDay={setSelectedDay} selectedDay={selectedDay}/>
 
           <SearchBox setToggleModal={setToggleModal} />
-          {toggleModal && <Modal handleClick={handleClick} setToggleModal={setToggleModal}/>}
+          {toggleModal && <Modal handleClick={handleClick} dailyData={dailyData} setSelectedDay={setSelectedDay} setToggleModal={setToggleModal}/>}
 
         </div>
 

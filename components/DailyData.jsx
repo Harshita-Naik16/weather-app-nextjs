@@ -1,11 +1,8 @@
 
 import moment from "moment/moment";
 import { weatherCodeComponents } from "@/utils/js/WeatherCodeData";
-import { useEffect } from "react";
 
 function DailyData({ data, setSelectedDay, selectedDay }) {
-
-
 
     const DayCard = ({ Icon, time, temp, day }) => {
         return <div
