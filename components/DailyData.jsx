@@ -19,7 +19,7 @@ function DailyData({ data, setSelectedDay, selectedDay }) {
     return (
         <div className="grid gap-y-2 lg:grid-cols-4 grid-cols-2 place-items-center gap-0 lg:mb-0 mb-8 rounded-lg text-xl bg-slate-800">
             {data.map(day => {
-                return <DayCard Icon={weatherCodeComponents[day.weathercode]} time={day.time} temp={day.temperature} day={day} />
+                return <DayCard key={day.time} Icon={weatherCodeComponents[day.weathercode]} time={day.time} temp={day.temperature} day={day} />
             })}
         </div>
     )

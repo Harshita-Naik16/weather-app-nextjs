@@ -18,7 +18,6 @@ export default function Home() {
     wind: 0,
     uv: 0
   })
-
   
   const handleClick = useCallback((city) => {
     const { latitude, longitude } = city;
@@ -61,8 +60,17 @@ export default function Home() {
           {/* Dailycard container for 4 days */}
           <DailyData data={dailyData} setSelectedDay={setSelectedDay} selectedDay={selectedDay}/>
 
-          <SearchBox setToggleModal={setToggleModal} />
-          {toggleModal && <Modal handleClick={handleClick} dailyData={dailyData} setSelectedDay={setSelectedDay} setToggleModal={setToggleModal}/>}
+          <SearchBox 
+            setToggleModal={setToggleModal} 
+          />
+          {toggleModal && 
+            <Modal 
+              handleClick={handleClick} 
+              dailyData={dailyData} 
+              setSelectedDay={setSelectedDay} 
+              setToggleModal={setToggleModal} 
+              toggleModal={toggleModal}
+            />}
 
         </div>
 

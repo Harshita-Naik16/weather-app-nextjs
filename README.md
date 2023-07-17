@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weather App 
 
-## Getting Started
+## Demo link
 
-First, run the development server:
+Access this live site at: [weather app](https://weather-app-nextjs-iota.vercel.app/) 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## About the app
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Its a simple weather app with beautiful UI, where one can search a city name and get the weather details for the next 4 days.
 
-[http://localhost:3000/api/hello](http://localhost:3000/api/hello) is an endpoint that uses [Route Handlers](https://beta.nextjs.org/docs/routing/route-handlers). This endpoint can be edited in `app/api/hello/route.js`.
+## Screenshots
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+![weatherApp screenshot](./public/images/weather-app.png)
 
-## Learn More
+## Technologies
 
-To learn more about Next.js, take a look at the following resources:
+I used..
+- ReactJs
+- NextJS
+- TailwindCss
+- open-meteo weather api
+- react-icons
+- moment: Parse, validate, manipulate and display dates and times in JavaScript.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Folder structure
+`/app`: contains all the layout, pages and styling of the web app.
+`/app/globals.css`: Contains some custom styling for the overall app.
+`/app/layout.jsx`: Contains the meta data, font styles and overall layout.
+`/components`: contains different reusable components.
+`hooks`: Has a custom built react hook useDebounce to delay search results.
+`/utils/js`: contains the data for weather icons imported from react-icons 
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Journey
 
-## Deploy on Vercel
+- I wanted to build a responsive weather app with beautiful interface.
+- Used Tailwind Css for styling.
+- Played around with fetch api to understand the weather data and its usage.
+- Learnt some usefull DOM methods
+- Learnt how to use debounce to delay the fetch results.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Credits
+- Design by a figma community post - https://www.figma.com/community/file/1176173521127853129/Simple-Weather-App-Design
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## contributer
+- Harshita Naik

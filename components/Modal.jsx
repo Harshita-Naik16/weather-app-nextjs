@@ -1,12 +1,13 @@
 "use client"
 import useDebounce from '@/hooks/useDebounce';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
-function Modal({ handleClick, setToggleModal }) {
+function Modal({ handleClick, setToggleModal, toggleModal}) {
     const [value, setValue] = useState("");
     const [showCities, setShowCities] = useState(false);
     const [cities, setCities] = useState([]);
     const debouncedValue = useDebounce(value, 500)
+    const inputTextRef = useRef()
 
     useEffect(() => {
         fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${debouncedValue}`)
@@ -19,12 +20,17 @@ function Modal({ handleClick, setToggleModal }) {
                     setCities(data.results)
                     setShowCities(true)
                 }
-
             })
+            .catch(err => console.log(err.message))
     }, [debouncedValue])
 
+    useEffect(() => {
+        if(toggleModal){
+            inputTextRef.current.focus()
+        }
+    }, [toggleModal])
+
     function handleCityClick(city) {
-        // e.stopPropagation()
         setShowCities(false)
         setToggleModal(false)
         handleClick(city)
@@ -39,6 +45,7 @@ function Modal({ handleClick, setToggleModal }) {
                 onChange={(e) => setValue(e.target.value)}
                 onClick={(e) => e.stopPropagation()}
                 value={value}
+                ref={inputTextRef}
             />
             {showCities &&
                 <ul className='rounded-lg w-72 lg:w-96 my-1 bg-slate-700 overflow-y-scroll'>

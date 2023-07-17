@@ -1,8 +1,8 @@
-"use client";
-import React, { useEffect, useRef, useState } from 'react'
+
 import { SlLocationPin } from "react-icons/sl";
 
 export default function SearchBox({ setToggleModal }) {
+
 
     return (
         <>
